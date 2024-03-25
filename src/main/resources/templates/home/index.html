@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="base">
+<head>
+    <meta charset="UTF-8">
+    <title layout:fragment="title">
+        Accueil | Bienvenue</title>
+    <link rel="stylesheet" th:href="@{/css/home/style.css}">
+</head>
+
+<body>
+<div layout:fragment="theContentPage">
+    <div class="container d-flex justify-content-end">
+        <button id="btn-make-cours">
+            <a class="" th:href="@{cours/new}">
+                <i class="bi-house-fill me-2"></i>
+                Planifer un Cours
+            </a>
+        </button>
+    </div>
+</div>
+</body>
+</html>
