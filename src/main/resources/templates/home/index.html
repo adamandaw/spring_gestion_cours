@@ -8,6 +8,29 @@
     <title layout:fragment="title">
         Accueil | Bienvenue</title>
     <link rel="stylesheet" th:href="@{/css/home/style.css}">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events : [
+                    {
+                        title : "bonjour",
+                        start: '2024-04-01',
+                        end: '2024-04-02',
+
+                    }
+                ]
+            });
+            calendar.render();
+        });
+
+    </script>
 </head>
 
 <body>
@@ -20,6 +43,34 @@
             </a>
         </button>
     </div>
+
+    <div id='calendar'></div>
+
+    <div class="mt-4">
+        <h2 class="card-title">Listes des cours</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Âge</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="unCours :${cours}">
+                <td th:text="${unCours.id}"></td>
+                <td th:text="${unCours.libelle}"></td>
+                <td th:text="${unCours.semestre}"></td>
+                <td>
+                    <a th:href="@{/cours/{id}(id=${unCours.id})}">Details</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
 </div>
 </body>
+
 </html>
