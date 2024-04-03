@@ -22,4 +22,12 @@ public class ModuleEntity extends  AbstractEntity{
 
     @OneToMany(mappedBy = "module")
     private List<CoursEntity> cours;
+
+    @Override
+    public String toString() {
+        return "ModuleEntity{" +
+                "libelle='" + libelle + '\'' +
+
+                '}';
+    }
 }

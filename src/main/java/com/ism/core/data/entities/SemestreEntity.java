@@ -24,4 +24,13 @@ public class SemestreEntity extends  AbstractEntity{
 
     @OneToMany(mappedBy = "semestre")
     List<CoursEntity> cours;
+
+    @Override
+    public String toString() {
+        return "SemestreEntity{" +
+                "libelle=" + libelle +
+                ", niveauSemestre=" + niveauSemestre +
+
+                "} " ;
+    }
 }

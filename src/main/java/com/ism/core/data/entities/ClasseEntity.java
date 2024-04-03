@@ -15,9 +15,15 @@ import java.util.List;
 
 @Table(name = "classes")
 public class ClasseEntity  extends  AbstractEntity{
+
+    @OneToMany(mappedBy = "classe")
+    List<ParticipationCoursEntity> participationCours;
+
     @OneToMany(mappedBy = "classe")
     List<ProfesseurClasseEntity> professeurClasses;
 
+    @ManyToOne
+    private CoursEntity cour;
     @ManyToOne
     private NiveauEntity niveau;
 
@@ -26,6 +32,9 @@ public class ClasseEntity  extends  AbstractEntity{
 
     @OneToMany(mappedBy = "classe")
     private List<InscriptionEntity> inscriptions;
+
+//    @OneToMany(mappedBy = "classe")
+//    private List<EtudiantEntity> etudiants;
 
     @Column(unique = false,nullable = false)
     private String libelle;
@@ -39,4 +48,15 @@ public class ClasseEntity  extends  AbstractEntity{
     public ClasseEntity(){
         this.coursIsOpen=false;
   }
+
+    @Override
+    public String toString() {
+        return "ClasseEntity{" +
+                "cour=" + cour +
+                ", niveau=" + niveau +
+                ", filiere=" + filiere +
+                ", libelle='" + libelle + '\'' +
+                ", coursIsOpen=" + coursIsOpen +
+                "} " + super.toString();
+    }
 }

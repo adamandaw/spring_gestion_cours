@@ -24,4 +24,13 @@ public class InscriptionEntity extends AbstractEntity{
 
     @ManyToOne
     private ClasseEntity classe;
+
+    @Override
+    public String toString() {
+        return "InscriptionEntity{" +
+                "anneeScolaire=" + anneeScolaire +
+                ", etudiant=" + etudiant +
+                ", classe=" + classe +
+                "} " ;
+    }
 }

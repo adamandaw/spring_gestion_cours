@@ -18,6 +18,8 @@ import java.util.List;
 @Table(name = "etudiants")
 public class EtudiantEntity extends AbstractPersonEntity{
 
+//    @ManyToOne
+//    private ClasseEntity classe;
 
     @Column(unique = true,nullable = false)
     private String telephone;
@@ -33,4 +35,13 @@ public class EtudiantEntity extends AbstractPersonEntity{
 
     @OneToMany(mappedBy = "etudiant")
     private List<InscriptionEntity> inscriptions;
+
+    @Override
+    public String toString() {
+        return "EtudiantEntity{" +
+                "telephone='" + telephone + '\'' +
+                ", sexe=" + sexe +
+                ", dateNaissance=" + dateNaissance +
+                "} " + super.toString();
+    }
 }

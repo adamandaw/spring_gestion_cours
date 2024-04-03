@@ -5,6 +5,7 @@ import com.ism.core.data.enums.ESexe;
 import com.ism.core.data.enums.ESpecialite;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "professeurs")
+@Builder
 public class ProfesseurEntity extends AbstractPersonEntity {
     @Enumerated(value = EnumType.STRING)
     private EGrade grade;
@@ -28,4 +30,14 @@ public class ProfesseurEntity extends AbstractPersonEntity {
 
     @OneToMany(mappedBy = "professeur")
     private List<CoursEntity> cours;
+
+    @Override
+    public String toString() {
+        return "ProfesseurEntity{" +
+                "grade=" + grade +
+                ", specialite=" + specialite +
+                ", classes=" + classes +
+                ", cours=" + cours +
+                '}';
+    }
 }

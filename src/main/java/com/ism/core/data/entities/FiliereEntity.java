@@ -20,4 +20,11 @@ public class FiliereEntity extends  AbstractEntity{
     @OneToMany(mappedBy = "filiere")
     private List<ClasseEntity> classes;
 
+    @Override
+    public String toString() {
+        return "FiliereEntity{" +
+                "libelle=" + libelle +
+
+                '}';
+    }
 }

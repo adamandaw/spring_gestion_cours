@@ -23,4 +23,10 @@ public class NiveauEntity extends  AbstractEntity{
     @OneToMany(mappedBy = "niveauSemestre")
     private List<SemestreEntity> semestres;
 
+    @Override
+    public String toString() {
+        return "NiveauEntity{" +
+                "libelle=" + libelle +
+                '}';
+    }
 }

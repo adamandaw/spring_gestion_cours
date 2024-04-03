@@ -32,6 +32,8 @@ public class ClassesFixtures implements CommandLineRunner {
             classe.setNiveau(niveau);
             classe.setFiliere(filieres.get(i-1));
             classe.setLibelle(niveau.getLibelle().name() +" " + filieres.get(i-1).getLibelle());
+               classe.setCoursIsOpen(classe.getLibelle()=="L3 CDSD");
+               classe.setCoursIsOpen(classe.getLibelle()=="L3 MAE");
                 classeRepository.save(classe);
             }
         }

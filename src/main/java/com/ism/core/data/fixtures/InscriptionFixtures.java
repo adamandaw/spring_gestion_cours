@@ -35,7 +35,7 @@ public class InscriptionFixtures implements CommandLineRunner {
             InscriptionEntity inscription=new InscriptionEntity();
             inscription.setAnneeScolaire(annees.get(random.nextInt(1,3)));
             inscription.setEtudiant(etudiants.get(random.nextInt(1,10)));
-            inscription.setClasse(classes.get(random.nextInt(1,4)));
+            inscription.setClasse(classes.get(random.nextInt(1,3)));
             inscriptionRepository.save(inscription);
         }
 

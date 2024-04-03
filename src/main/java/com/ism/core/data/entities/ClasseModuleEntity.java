@@ -21,6 +21,12 @@ public class ClasseModuleEntity extends  AbstractEntity{
     @ManyToOne
     private ModuleEntity module;
 
+    @Override
+    public String toString() {
+        return "ClasseModuleEntity{" +
+
+                "} " + super.toString();
+    }
 
 
 }
